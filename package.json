@@ -1,0 +1,32 @@
+{
+  "name": "playwright-lambdatest-parallel",
+  "version": "1.0.0",
+   "type": "module",
+  "description": "Playwright parallel testing on LambdaTest",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:parallel": "npx playwright test --workers=2",
+    "test:headed": "npx playwright test --headed",
+    "test:single": "npx ts-node parallel-test.ts",
+    "test:ui": "npx playwright test --ui",
+    "test:debug": "npx playwright test --debug",
+    "report": "npx playwright show-report",
+    "codegen": "npx playwright codegen"
+  },
+  "keywords": [
+    "playwright",
+    "lambdatest",
+    "typescript",
+    "parallel-testing"
+  ],
+  
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^20.19.21",
+    "dotenv": "^17.2.3",
+    "playwright": "^1.40.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+  
+}

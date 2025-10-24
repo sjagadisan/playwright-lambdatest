@@ -1,0 +1,28 @@
+image: gitpod/workspace-full
+
+tasks:
+  - init: |
+      # install deps and Playwright browsers
+      npm ci
+      npx playwright install --with-deps || true
+    command: |
+      # If credentials are not set, warn and continue (tests will fail when connecting to LambdaTest)
+      if [ -z "$LT_USERNAME" ] || [ -z "$LT_ACCESS_KEY" ]; then
+        echo "WARNING: LT_USERNAME and/or LT_ACCESS_KEY are not set in Gitpod workspace settings."
+        echo "Set them in Gitpod (Repository / Workspace) as secure environment variables before running tests."
+      fi
+      # run the Playwright test suite (list reporter is compact in the Gitpod terminal)
+      npx playwright test --reporter=list || true
+
+ports:
+  - port: 9323
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - ms-playwright.playwright
+
+github:
+  prebuilds:
+    master: true
+    pullRequests: true
