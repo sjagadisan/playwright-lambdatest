@@ -32,8 +32,8 @@ const config: PlaywrightTestConfig = {
       viewport: { width: 1280, height: 720 },
       baseURL: 'https://www.lambdatest.com',
       ltOptions: {
-        user: capability['LT:Options'].user,
-        accessKey: capability['LT:Options'].accessKey,
+       // user: capability['LT:Options'].user,
+       // accessKey: capability['LT:Options'].accessKey,
         platform: capability['LT:Options'].platform,
         build: capability['LT:Options'].build,
         name: capability['LT:Options'].name,

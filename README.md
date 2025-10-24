@@ -55,8 +55,7 @@ Or, use a `.env` file at repository root (already in this repo). DO NOT commit r
 ## Configuring Playwright parallel runs on LambdaTest
 
 - `playwright.config.ts` maps `Config/capabilities.ts` entries to Playwright projects. Each project becomes a separate job and can be executed in parallel by Playwright using workers.
-- To increase/decrease parallelism, set `workers` in `playwright.config.ts` or pass `--workers=N` to `npx playwright test`.
-
+- To increase/decrease parallelism, 
 ## Troubleshooting
 
 - 400 Bad Request: "The capability browserName has value which is not supported"
@@ -70,8 +69,5 @@ Or, use a `.env` file at repository root (already in this repo). DO NOT commit r
   - Confirm Gitpod secrets are configured and available to the workspace.
   - Confirm you run tests from repository root so dotenv picks up `.env` (if using .env fallback).
 
-## Next steps / Automation ideas
-- Add a CI workflow that runs `npx playwright test` on PRs (GitHub Actions), using GitHub secrets for LT credentials.
-- Add a small script to validate capabilities file before running tests (ensures no empty browserName values).
 
-If you'd like, I can create a CI workflow and add a capability validator script; tell me which you'd prefer.
+
